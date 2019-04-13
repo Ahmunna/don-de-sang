@@ -1,33 +1,226 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: #E7F2F8;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar {
+    font-size: 18px;
+    background :#FFA384;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-nav {
+    list-style-type: none;
+    display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-links,
+.logo {
+    text-decoration: none;
+    color: white;
+}
+
+.main-nav li {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+}
+
+.active {
+    display: block;
+}
+
+.affiche
+{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    color: black;
+}
+.imageAffiche
+{
+    background-size: cover;
+    width:100%;
+}
+.texteAffiche
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+   
+}
+.information 
+{
+    text-align: center;
+    padding-top: 20px;
+}
+h1
+{
+    font-style: italic;
+    padding-bottom: 20px;
+
+}
+.register
+{
+    text-align: center;
+
+}
+.button
+{
+    margin: 30px;
+    padding: 12px;
+    border-radius: 7px;
+    color: white;
+    background: #FFA384;
+    border: none;
+
+}
+.button:hover
+{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+p
+{
+    padding: 10px;
+}
+.Title
+{
+    padding: 20px;
+    font-weight: italic; 
+    text-align: center;
+}
+.formContainer
+{
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid #E7F2F8;
+    padding: 30px;
+    background: white;
+    border-radius : 10px;
+    color: grey;
+
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    color: black;
+    
   }
-  to {
-    transform: rotate(360deg);
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
   }
+  
+.signupButton
+{
+    cursor: pointer;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    background: #FFA384;
+    padding: 10px;
+    border: none;
+    margin-top:15px;
+    margin-bottom: 15px;
+    color:white;
+}
+
+.signinLink
+{
+    color : grey;
+    text-decoration: none;
+    font-style: italic;
+    padding-top: 10px;
+
+}
+.signinLink:hover
+{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+
+    .main-nav {
+        display: flex;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .main-nav li {
+        margin: 0;
+    }
+
+    .nav-links {
+        margin-left: 40px;
+    }
+
+    .logo {
+        margin-top: 0;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .logo:hover,
+    .nav-links:hover {
+        color: rgba(255, 255, 255, 1);
+    }
 }
