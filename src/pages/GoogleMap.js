@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 class GoogleMap extends Component {
 
 constructor(props)
@@ -21,7 +21,7 @@ constructor(props)
 }
   render() {
     return (
-        <div style={{ height: '100vh', width: '100%' }}>
+        <div>
         <h1 className="Title">Centre régional de transfusion sanguine de Marrakech</h1>
         <Map
           google={this.props.google}
