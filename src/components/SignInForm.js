@@ -6,7 +6,7 @@ export default class SignInForm extends Component {
     return (
       <div>
            <form>
-            <div class="formContainer">
+            <div className="formContainer">
 
                 <label for="email">Email</label>
                 <input type="text" name="email" />
@@ -14,9 +14,9 @@ export default class SignInForm extends Component {
                 <label form="motdepasse">Mot de Passe</label>
                 <input type="password" name="password" />
                 
-                <button type="submit" class="signupButton">Se connecter</button>
-                <Link to="#" class="signinLink" >Mot de passe Oublié ?</Link><br/>
-                <Link to="/signUp" class="signinLink" >Vous n'avez pas de compte ? inscrivez vous</Link><br/>
+                <button type="submit" className="signupButton">Se connecter</button>
+                <Link to="#" className="signinLink" >Mot de passe Oublié ?</Link><br/>
+                <Link to="/signUp" className="signinLink" >Vous n'avez pas de compte ? inscrivez vous</Link><br/>
 
             </div>
         </form>

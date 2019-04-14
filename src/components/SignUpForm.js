@@ -5,7 +5,7 @@ export default class SignUpForm extends Component {
     return (
       <div>
         <form method="GET">
-            <div class="formContainer">
+            <div className="formContainer">
 
                 <label for="prenom"><b>Prenom</b></label>
                 <input type="text" placeholder="Entrer prénom" name="prenom" required />
@@ -44,7 +44,7 @@ export default class SignUpForm extends Component {
                     <option>-</option>               
                 </select>
 
-                <button class="signupButton"  id="test"type="submit">S'inscrire</button>
+                <button className="signupButton"  id="test"type="submit">S'inscrire</button>
             </div>  
         </form>
 

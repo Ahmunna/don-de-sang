@@ -7,6 +7,7 @@ import AboutUs from '../pages/AboutUs';
 import ContactUs from '../pages/ContactUs';
 import Home from '../pages/Home';
 import Error from '../pages/Error';
+import GoogleMap from '../pages/GoogleMap';
 import { Route,  BrowserRouter as Router ,Switch} from 'react-router-dom';
 import Dashboard from './Dashboard';
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/signUp" component={SignUp} />
+            <Route path="/map" component={GoogleMap} />
             <Route path="/signIn" component={SignIn} />
             <Route path="/aboutUs" component={AboutUs} />
             <Route path="/contactUs" component={ContactUs} />
