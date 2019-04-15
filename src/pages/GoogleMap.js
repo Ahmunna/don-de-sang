@@ -30,6 +30,7 @@ constructor(props)
           style={{width : '50%' , height : '50%' , margin : '0 auto'}}
         >
           <Marker  position={this.state.CRTS}/>
+          
         </Map>
       </div>
     )

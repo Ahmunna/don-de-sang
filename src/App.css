@@ -181,11 +181,22 @@ input[type=text], input[type=password] {
     margin: 0 auto;
 }
 
-
-
-
-
-
+.dashboard
+{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius : 10px;
+    margin: auto;
+}
+.flexContainer
+{
+    height: calc(100vh - 70px);  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 
 @media screen and (min-width: 768px) {
