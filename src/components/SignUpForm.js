@@ -1,50 +1,99 @@
 import React, { Component } from 'react'
 import '../App.css';
 export default class SignUpForm extends Component {
+
+    constructor()
+    {
+      super();
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+      this.state = {
+
+        firstName : '',
+        lastName : '',
+        email : '',
+        password : '',
+        gender : '',
+        bloodType : '',
+        rhesus : ''
+      }
+    }
+   
+    //function to handle the submit button
+    handleSubmit(event)
+    {
+      event.preventDefault();
+        fetch('http://localhost:8080/user',
+        {
+          method : 'POST',
+          headers : {
+            "Content-Type" : "application/json"
+          },
+          body : JSON.stringify({
+            firstName : this.state.firstName,
+            lastName : this.state.lastName,
+            email : this.state.email,
+            password : this.state.password,
+            gender : this.state.gender,
+            bloodType : this.state.bloodType,
+            rhesus : this.state.rhesus
+          })
+        })
+        console.log("worked")
+    }
+    //function to handle the change of an input
+    handleChange(event)
+    {
+      const target = event.target;
+      const value = target.value;
+      const name = target.name;
+  
+      this.setState({
+        [name]: value
+      });
+    }
+    
   render() {
     return (
       <div>
-        <form method="GET">
+        <form  onSubmit={this.handleSubmit}>
             <div className="formContainer">
 
-                <label for="prenom"><b>Prenom</b></label>
-                <input type="text" placeholder="Entrer prénom" name="prenom" required />
+                <label htmlFor="firstName"><b>Prenom</b></label>
+                <input type="text" placeholder="Entrer prénom" name="firstName" value={this.state.firstName} required onChange={this.handleChange} />
 
-                <label for="nom"><b>Nom</b></label>
-                <input type="text" placeholder="Entrer nom" name="nom" required />
+                <label htmlFor="lastName"><b>Nom</b></label>
+                <input type="text" placeholder="Entrer nom" name="lastName" value={this.state.lastName} required onChange={this.handleChange} />
 
-                <label for="telephone"><b>Telephone</b></label>
-                <input type="text" placeholder="Entrer telephone" name="telephone" required />
+                <label htmlFor="email"><b>Email</b></label>
+                <input type="text" placeholder="Entrer Email" name="email" value={this.state.email} required onChange={this.handleChange} />
 
-                <label for="Email"><b>Email</b></label>
-                <input type="text" placeholder="Entrer Email" name="Email" required />
-
-                <label for="motdepasse"><b>Mot de passe</b></label>
-                <input type="text" placeholder="Entrer mot de passe" name="motdepasse" required />
+                <label htmlFor="password"><b>Mot de passe</b></label>
+                <input type="text" placeholder="Entrer mot de passe" name="password" value={this.state.password} required onChange={this.handleChange}/>
                 
-                <label for="genre"><b>Genre</b></label>
-                <input type="radio" id="masculin" />
-                <label for="masculin">masculin</label>
-                <input type="radio" id="masculin" />
-                <label for="feminin">Féminin</label>
+                <label htmlFor="gender"><b>Genre</b></label>
+                <select name="gender" value={this.state.gender} onChange={this.handleChange}>
+                  <option selected value="male">male</option>
+                  <option value="female">femelle</option>
+                </select>
                 <br/><br/> 
 
 
-                <label for="groupeSanguin"><b>Groupe Sanguin</b></label>
-                <select>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>AB</option>
-                    <option>O</option>
+                <label htmlFor="bloodType"><b>Groupe Sanguin</b></label>
+                <select name="bloodType" value={this.state.bloodType} onChange={this.handleChange}>
+                    <option selected value="A" >A</option>
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="O">O</option>
                 </select>
 
-                <label for="rhesus"><b>Rhésus</b></label>
-                <select>
-                    <option>+</option>
-                    <option>-</option>               
+                <label htmlFor="rhesus"><b>Rhésus</b></label>
+                <select name="rhesus" value={this.state.rhesus} onChange={this.handleChange}>
+                    <option selected value="+" >+</option>
+                    <option value="-">-</option>               
                 </select>
 
-                <button className="signupButton"  id="test"type="submit">S'inscrire</button>
+                <button className="signupButton"  id="test" type="submit">S'inscrire</button>
             </div>  
         </form>
 
