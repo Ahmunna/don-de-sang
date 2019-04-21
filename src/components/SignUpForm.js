@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css';
-export default class SignUpForm extends Component {
+import {withRouter} from 'react-router-dom';
+class SignUpForm extends Component {
 
     constructor()
     {
@@ -13,9 +14,9 @@ export default class SignUpForm extends Component {
         lastName : '',
         email : '',
         password : '',
-        gender : '',
-        bloodType : '',
-        rhesus : ''
+        gender : 'male',
+        bloodType : 'A',
+        rhesus : '+'
       }
     }
    
@@ -38,8 +39,8 @@ export default class SignUpForm extends Component {
             bloodType : this.state.bloodType,
             rhesus : this.state.rhesus
           })
-        })
-        console.log("worked")
+        }).then( () => this.props.history.push({ pathname : '/signIn' , state : { firstName : this.state.firstName}})  )
+        
     }
     //function to handle the change of an input
     handleChange(event)
@@ -73,7 +74,7 @@ export default class SignUpForm extends Component {
                 
                 <label htmlFor="gender"><b>Genre</b></label>
                 <select name="gender" value={this.state.gender} onChange={this.handleChange}>
-                  <option selected value="male">male</option>
+                  <option  value="male">male</option>
                   <option value="female">femelle</option>
                 </select>
                 <br/><br/> 
@@ -81,7 +82,7 @@ export default class SignUpForm extends Component {
 
                 <label htmlFor="bloodType"><b>Groupe Sanguin</b></label>
                 <select name="bloodType" value={this.state.bloodType} onChange={this.handleChange}>
-                    <option selected value="A" >A</option>
+                    <option  value="A" >A</option>
                     <option value="B">B</option>
                     <option value="AB">AB</option>
                     <option value="O">O</option>
@@ -89,7 +90,7 @@ export default class SignUpForm extends Component {
 
                 <label htmlFor="rhesus"><b>Rhésus</b></label>
                 <select name="rhesus" value={this.state.rhesus} onChange={this.handleChange}>
-                    <option selected value="+" >+</option>
+                    <option  value="+" >+</option>
                     <option value="-">-</option>               
                 </select>
 
@@ -101,3 +102,5 @@ export default class SignUpForm extends Component {
     )
   }
 }
+
+export default withRouter(SignUpForm)
