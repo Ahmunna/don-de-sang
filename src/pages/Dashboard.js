@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
             <Route path="/dashboard" exact  component={Welcome}/>
             <Route path="/dashboard/settings" component={Settings} />
             <Route path="/dashboard/record" component={Records} />
-            <Route path="/dashboard/create" component={RegisterRecord} />
+            <Route path="/dashboard/createRecord" component={RegisterRecord} />
           </Switch>
         </Router>
         

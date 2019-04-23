@@ -33,10 +33,11 @@ class SignInForm extends Component {
       const contentType = response.headers.get("content-type");
       if(contentType && contentType.indexOf("application/json") !== -1 )
       {
+        
         return response.json().then(data => this.props.history.push({
           pathname : '/dashboard',
-          state : { id : data.id , firstName : data.firstName}
-        }) )
+          state : {user : data}
+        }) ) 
       }
       else
       {
