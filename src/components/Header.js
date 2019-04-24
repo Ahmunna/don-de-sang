@@ -11,7 +11,7 @@ export default class Header extends Component {
                 <NavLink to="/" className="logo">logo</NavLink>
                 <ul className="main-nav" id="js-menu">
                     <li className="active"> 
-                        <NavLink  to="/" className="nav-links ">Accueil</NavLink>
+                        <NavLink  to="/" className="nav-links" >Accueil</NavLink>
                     </li>
                     <li>
                         <NavLink to="/contactUs" className="nav-links">Nous Contacter</NavLink>
