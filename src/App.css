@@ -131,7 +131,7 @@ p
 
 }
 
-input[type=text], input[type=password] {
+textarea,input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -196,6 +196,16 @@ input[type=text], input[type=password] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.recordContainer 
+{
+    padding: 20px;
+    margin: 30px auto 30px auto;
+    border: 1px solid black;
+    background: white;
+    border-radius: 10px;
+    width : 50%;
 }
 
 

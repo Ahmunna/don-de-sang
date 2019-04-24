@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 export default class Header extends Component {
   render() {
     return (
@@ -8,19 +8,19 @@ export default class Header extends Component {
                 <span className="navbar-toggle" id="js-navbar-toggle">
                     <i className="fas fa-bars"></i>
                 </span>
-                <Link to="/" className="logo">logo</Link>
+                <NavLink to="/" className="logo">logo</NavLink>
                 <ul className="main-nav" id="js-menu">
                     <li className="active"> 
-                        <Link to="/" className="nav-links ">Accueil</Link>
+                        <NavLink  to="/" className="nav-links ">Accueil</NavLink>
                     </li>
                     <li>
-                        <Link to="/contactUs" className="nav-links">Nous Contacter</Link>
+                        <NavLink to="/contactUs" className="nav-links">Nous Contacter</NavLink>
                     </li>
                     <li>
-                        <Link to="/aboutUs" className="nav-links">Qui Sommes Nous ?</Link>
+                        <NavLink to="/aboutUs" className="nav-links">Qui Sommes Nous ?</NavLink>
                     </li>
                     <li>
-                        <Link to="/map" className="nav-links">Où donner du sang ?</Link>
+                        <NavLink to="/map" className="nav-links">Où donner du sang ?</NavLink>
                     </li>
                 </ul>
                

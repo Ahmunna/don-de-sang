@@ -29,6 +29,7 @@ class Welcome extends Component {
           <Link className="signupButton" style={{textDecoration : 'none' , textAlign : 'center'}} to={{pathname : "/dashboard/record" , state : {id : this.state.user.id}}}>Consulter l'historique des dons</Link>
           <Link className="signupButton" style={{textDecoration : 'none' , textAlign : 'center'}} to={{pathname : "/dashboard/createRecord" , state : {id : this.state.user.id}}}>S'enregistrer pour un don de sang</Link>
           <Link className="signupButton" style={{textDecoration : 'none' , textAlign : 'center'}} to={{pathname : "/dashboard/settings" , state : {id : this.state.user.id}}}>modifier le profil</Link>
+          <button className="signupButton"  style={{textDecoration : 'none' , textAlign : 'center'}} onClick={() => this.props.history.goBack()}>Se Deconnecter</button>
           
         </div>
       </div>
